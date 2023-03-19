@@ -1,8 +1,8 @@
 import './App.css';
 
-function Button(props) {
+function Button({ label, onClick, className='button--primary'}) {
   return (
-    <button onClick={props.onClick}>{props.label}</button>
+    <button className={`button ${className}`} onClick={onClick}>{label}</button>
   )
 }
 
@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World!</h1>
-      <Button label="Sing Up" onClick={UserRegistred} />
-      <Button label="Sing In" onClick={UserLogged} />
+      <Button label="Sing Up" onClick={UserRegistred} className='button--primary' />
+      <Button label="Sing In" onClick={UserLogged} className='button--secondary' />
     </div>
   );
 }
